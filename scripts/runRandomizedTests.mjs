@@ -2,7 +2,7 @@
 import Mocha from "mocha";
 import path from "node:path";
 
-// The 47 passing tests.
+// All passing tests projects and todos.
 // Specification-expected failures are tested separately.
 const testFiles = [
     "test/JSON/projectsEndpoint.js",
@@ -13,7 +13,18 @@ const testFiles = [
     "test/XML/projectTodoRelationshipEndpoints.js",
     "test/JSON/projectCategoryRelationshipEndpoints.js",
     "test/XML/projectCategoryRelationshipEndpoints.js",
-    "test/JSON/projectBugsObserved.js"
+    "test/JSON/projectBugsObserved.js",
+    // todos (yanick)
+    "test/JSON/todosEndpoint.js",
+    "test/XML/todosEndpoint.js",
+    "test/JSON/specificTodoEndpoint.js",
+    "test/XML/specificTodoEndpoint.js",
+    "test/JSON/todoProjectRelationshipEndpoints.js",
+    "test/XML/todoProjectRelationshipEndpoints.js",
+    "test/JSON/todoCategoryRelationshipEndpoints.js",
+    "test/XML/todoCategoryRelationshipEndpoints.js",
+    "test/JSON/todoUndocumentedEndpoints.js",
+    "test/JSON/todoBugsObserved.js"
 ];
 
 // Use a seed so a failed random order can be reproduced.
