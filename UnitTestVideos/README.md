@@ -53,10 +53,30 @@ Command:
 
 `npx mocha "test/{JSON,XML}/*.js" --ignore "test/JSON/projectBugsExpected.js" --ignore "test/JSON/todoBugsExpected.js"`
 
-Note: now that the Todos tests are in the same folders, this is the command to use for the regular suite. The command above would also pick up `todoBugsExpected.js`.
+Note: now that the Todos tests are in the same folders, this is the command to use for the regular suite. The 47-test command in the first section would now also pick up `todoBugsExpected.js`.
 
 ### 2. Bug Verification
 
 Both expected-behavior modules are run on their own. They check what the documentation describes, so they fail against the current API.
 
-**Result
+**Result: 4 failing tests (BUG-01 to BUG-04) and 6 failing tests (BUG-05 to BUG-10).**
+
+Commands:
+
+`npx mocha test/JSON/projectBugsExpected.js`
+
+`npx mocha test/JSON/todoBugsExpected.js`
+
+The 114-test suite already includes the ten passing observed-behavior tests for these bugs.
+
+### 3. Randomized Test Execution
+
+The passing suite is run in a shuffled order to show the tests don't depend on each other.
+
+**Result: 114 passing tests.**
+
+Command:
+
+`node scripts/runRandomizedTests.mjs`
+
+All tests use temporary data and cleanup functions to preserve the original API state.
